@@ -1,0 +1,46 @@
+.announcement-bar-container {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    rgba(149, 109, 194, 1),
+    rgba(78, 73, 145, 1) 20%,
+    rgba(185, 61, 70, 1) 100%
+  );
+  /* background-size: 200% 100%; */
+  animation: scrollGradient 10000ms ease infinite;
+}
+
+.announcement-bar-carousel {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.announcement-scroll-content {
+  display: flex;
+  gap: 3rem;
+  padding: 0.5rem 0;
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+}
+
+.announcement-wrapper {
+  flex-shrink: 0;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 640px) {
+  .announcement-scroll-content {
+    animation: scroll-left 15s linear infinite;
+    gap: 1.5rem;
+  }
+}
