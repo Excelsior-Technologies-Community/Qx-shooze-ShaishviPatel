@@ -21,7 +21,7 @@ const Header = () => {
     <>
       <div className="announcement-wrapper py-2 text-white font-semibold whitespace-nowrap">
         <span className="announcement-item flex items-center gap-1">
-          <span classNameName="text-[16px] sm:text-base">
+          <span className="text-[16px] sm:text-base">
             Enjoy 20% off your entire order with the code{" "}
             <span className="font-bold">SHOEFRESH20</span>.
           </span>
@@ -119,81 +119,88 @@ const Header = () => {
               </a>
             </div>
 
-           {/*Dialogbox*/}
-<Dialog
-  open={open}
-  data-aos="fade-down"
-  data-aos-duration="2000"
-  onClose={() => setOpen(false)}
-  /* PaperProps allows customizing the dialog container directly */
-  PaperProps={{
-    className: " p-0 relative rounded-none overflow-hidden",
-    style: { 
-      borderRadius: 0,
-      border: '1px solid rgba(0, 0, 0, 0.12)', 
-    } 
-  }}
->
-  {/* Close Button 'X' in top right corner */}
-  <button 
-    onClick={() => setOpen(false)} 
-    className="absolute top-4 right-4 hover:text-black text-2xl font-light focus:outline-none"
-  >
-    &#x2715;
-  </button>
+            {/*Dialogbox*/}
+            <Dialog
+              open={open}
+              data-aos="fade-down"
+              data-aos-duration="2000"
+              onClose={() => setOpen(false)}
+              
+              PaperProps={{
+                className: " p-0 relative rounded-none overflow-hidden",
+                style: {
+                  borderRadius: 0,
+                  border: "1px solid rgba(0, 0, 0, 0.12)",
+                },
+              }}
+            >
+              {/* Close Button 'X' in top right corner */}
+              <button
+                onClick={() => setOpen(false)}
+                className="absolute top-4 right-4 hover:text-black text-2xl font-light focus:outline-none"
+              >
+                &#x2715;
+              </button>
 
-  <div className=" overflow-hidden w-125 h-130 flex flex-col items-center justify-center text-center font-semibold">
-    
-    {/* Header Content Section with exact padding/centering */}
-    <div className="my-8 pt-20 px-15 font-bold ">
-      {/* Title */}
-      <h3 className="text-[30px] tracking-wide text-black mb-4">Login</h3>
-      <p className="text-[16px] text-gray-600 font-normal">Please enter your e-mail and password:</p>
-    </div>
+              <div className=" overflow-hidden w-125 h-130 flex flex-col items-center justify-center text-center font-semibold">
+                
+                <div className="my-8 pt-20 px-15 font-bold ">
+                  {/* Title */}
+                  <h3 className="text-[30px] tracking-wide text-black mb-4">
+                    Login
+                  </h3>
+                  <p className="text-[16px] text-gray-600 font-normal">
+                    Please enter your e-mail and password:
+                  </p>
+                </div>
 
-    {/* Custom Styled Full-Width Inputs */}
-    <div className="w-full px-10 flex flex-col gap-5">
-      <input
-        type="email"
-        placeholder="Email"
-        className="w-full px-3 py-3 border border-gray-200 focus:outline-none focus:border-gray-300 text-[16px] placeholder-gray-500 transition-colors rounded"
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        className="w-full px-3 py-3 border border-gray-200 focus:outline-none focus:border-gray-300 text-[16px] placeholder-gray-500 transition-colors rounded"
-        required
-      />
-    </div>
+         
+                <div className="w-full px-10 flex flex-col gap-5">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full px-3 py-3 border border-gray-200 focus:outline-none focus:border-gray-300 text-[16px] placeholder-gray-500 transition-colors rounded"
+                    required
+                  />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="w-full px-3 py-3 border border-gray-200 focus:outline-none focus:border-gray-300 text-[16px] placeholder-gray-500 transition-colors rounded"
+                    required
+                  />
+                </div>
 
-    {/* Forgot Password Link - Centered relative to middle content area */}
-      <a href="#" className=" text-[16px] text-gray-500 underline mb-8 hover:text-black relative top-5 left-35">
-        Forgot your password?
-      </a>
+                
+                <a
+                  href="#"
+                  className=" text-[16px] text-gray-500 underline mb-8 hover:text-black relative top-5 left-35"
+                >
+                  Forgot your password?
+                </a>
 
+                
+                <div className="w-full pt-2 pb-2 px-10 flex flex-col items-center ">
+                  <button
+                    type="submit"
+                    className="w-full bg-[#ae3f4f] text-white py-5 font-medium tracking-wider uppercase text-[15px] hover:bg-[#000000] transition-colors"
+                    onClick={() => setOpen(false)}
+                  >
+                    LOGIN
+                  </button>
+                </div>
 
-    {/* Middle Section with padding for Link & Button */}
-    <div className="w-full pt-2 pb-2 px-10 flex flex-col items-center ">
-      
-      <button
-        type="submit"
-        className="w-full bg-[#ae3f4f] text-white py-5 font-medium tracking-wider uppercase text-[15px] hover:bg-[#000000] transition-colors"
-        onClick={() => setOpen(false)}
-      >
-        LOGIN
-      </button>
-    </div>
-
-    {/* Footer Link - Centered vertically and horizontally in the remaining space */}
-    <div className="pb-25 pt-3 px-10 text-[17px] text-gray-500">
-      New customer?{" "}
-      <a href="#" className="underline text-gray-600 hover:text-black">
-        Register
-      </a>
-    </div>
-  </div>
-</Dialog>
+              
+                <div className="pb-25 pt-3 px-10 text-[17px] text-gray-500">
+                  New customer?{" "}
+                  <a
+                    href="#"
+                    className="underline text-gray-600 hover:text-black"
+                  >
+                    Register
+                  </a>
+                </div>
+              </div>
+            </Dialog>
 
             <div className="flex items-center  gap-5 shrink-0 ml-2">
               {/* facebook Icon */}
@@ -272,7 +279,7 @@ const Header = () => {
       <div className="lg:hidden sm:block md:block w-full py-3">
         <div className="container max-w-6xl mx-auto  text-[#000000] px-10 py-5 flex items-center justify-between gap-2 sm:px-5 sm:gap-5">
           <div className="flex items-center gap-5 sm:gap-2">
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
             <SearchIcon fontSize="medium" />
           </div>
           <div className="flex items-center space-x-6 sm:space-x-2">
