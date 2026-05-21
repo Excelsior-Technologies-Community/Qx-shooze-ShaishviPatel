@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
+import IconButton from "@mui/material/IconButton";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -16,7 +20,19 @@ import { Link } from "react-router-dom";
 import { DialogContentText } from "@mui/material";
 
 const Header = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
+
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState(false);
+  const [view, setView] = useState("login");
+
   const announcementContent = (
     <>
       <div className="announcement-wrapper py-2 text-white font-semibold whitespace-nowrap">
@@ -77,6 +93,7 @@ const Header = () => {
       </div>
     </>
   );
+
   return (
     <>
       {/* announcement bar */}
@@ -101,7 +118,7 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center space-x-6 font-medium">
             <div className="group flex gap-2">
-              <a
+              <button
                 href="#"
                 className=" inline-block items-center   hover:text-[#ae3f4f]"
                 onClick={() => {
@@ -109,7 +126,7 @@ const Header = () => {
                 }}
               >
                 Login
-              </a>
+              </button>
               /
               <a
                 href="#"
@@ -121,13 +138,10 @@ const Header = () => {
 
             {/*Dialogbox*/}
             <Dialog
-              open={open}
-              data-aos="fade-down"
-              data-aos-duration="2000"
+              open={open && view === "login"}
               onClose={() => setOpen(false)}
-              
               PaperProps={{
-                className: " p-0 relative rounded-none overflow-hidden",
+                className: "p-0 relative rounded-none overflow-hidden",
                 style: {
                   borderRadius: 0,
                   border: "1px solid rgba(0, 0, 0, 0.12)",
@@ -135,16 +149,21 @@ const Header = () => {
               }}
             >
               {/* Close Button 'X' in top right corner */}
-              <button
-                onClick={() => setOpen(false)}
-                className="absolute top-4 right-4 hover:text-black text-2xl font-light focus:outline-none"
+              <div
+                data-aos="fade-down"
+                data-aos-duration="1000"
+                data-aos-easing="linear"
+                className="relative overflow-hidden w-125 h-130 flex flex-col items-center justify-center text-center font-semibold"
               >
-                &#x2715;
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  className="absolute top-4 right-4 z-20 hover:text-black text-2xl font-light focus:outline-none"
+                >
+                  &#x2715;
+                </button>
 
-              <div className=" overflow-hidden w-125 h-130 flex flex-col items-center justify-center text-center font-semibold">
-                
-                <div className="my-8 pt-20 px-15 font-bold ">
+                <div className="my-8 pt-30 px-15 font-bold ">
                   {/* Title */}
                   <h3 className="text-[30px] tracking-wide text-black mb-4">
                     Login
@@ -154,8 +173,7 @@ const Header = () => {
                   </p>
                 </div>
 
-         
-                <div className="w-full px-10 flex flex-col gap-5">
+                <div className="w-full px-10 flex flex-col gap-5 ">
                   <input
                     type="email"
                     placeholder="Email"
@@ -170,16 +188,15 @@ const Header = () => {
                   />
                 </div>
 
-                
                 <a
+                  onClick={() => setView("forgot")}
                   href="#"
-                  className=" text-[16px] text-gray-500 underline mb-8 hover:text-black relative top-5 left-35"
+                  className=" text-[16px] underline underline-offset-4 pt-8 mb-2 text-[#333333b3] hover:text-black  self-end pr-10 transition-colors"
                 >
                   Forgot your password?
                 </a>
 
-                
-                <div className="w-full pt-2 pb-2 px-10 flex flex-col items-center ">
+                <div className="w-full mt-3 pb-2 px-10 flex flex-col items-center ">
                   <button
                     type="submit"
                     className="w-full bg-[#ae3f4f] text-white py-5 font-medium tracking-wider uppercase text-[15px] hover:bg-[#000000] transition-colors"
@@ -189,14 +206,70 @@ const Header = () => {
                   </button>
                 </div>
 
-              
                 <div className="pb-25 pt-3 px-10 text-[17px] text-gray-500">
                   New customer?{" "}
                   <a
                     href="#"
-                    className="underline text-gray-600 hover:text-black"
+                    className="underline underline-offset-4 text-gray-600 hover:text-black"
                   >
                     Register
+                  </a>
+                </div>
+              </div>
+            </Dialog>
+            {/*forgot box dailogbox*/}
+            <Dialog
+              open={open && view === "forgot"}
+              onClose={() => setOpen(false)}
+              PaperProps={{
+                className: "p-0 relative rounded-none overflow-hidden",
+              }}
+            >
+              {/* Close Button 'X' in top right corner */}
+              <div className="relative overflow-hidden w-125 h-85 flex flex-col items-center justify-center text-center font-semibold">
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  className="absolute top-4 right-4 z-20 hover:text-black text-[16px] font-light focus:outline-none"
+                >
+                  &#x2715;
+                </button>
+
+                <div className="mt-30 px-15 font-bold ">
+                  {/* Title */}
+                  <h3 className="text-[30px] tracking-wide text-black mb-3">
+                    Reset your password
+                  </h3>
+                  <p className="text-[16px] text-gray-600 font-normal">
+                    We will send you an email to reset your password.
+                  </p>
+                </div>
+
+                <div className="w-full px-10 flex flex-col gap-5 mt-5">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full px-3 py-3 border border-gray-200 focus:outline-none focus:border-gray-300 text-[16px] placeholder-gray-500 transition-colors rounded"
+                    required
+                  />
+                </div>
+                <div className="w-full pt-5 pb-2 px-10 flex flex-col items-center ">
+                  <button
+                    type="submit"
+                    className="w-full bg-[#ae3f4f] text-white py-5 font-medium tracking-wider uppercase text-[15px] hover:bg-[#000000] transition-colors"
+                    onClick={() => setOpen(false)}
+                  >
+                    SUBMIT
+                  </button>
+                </div>
+
+                <div className="pb-25 pt-3 px-10 text-[17px] text-gray-500">
+                  <a
+                    onClick={() => setView("login")}
+                    href="#"
+                    className="underline underline-offset-4 text-gray-600 hover:text-black"
+                  >
+                    Back to Login
                   </a>
                 </div>
               </div>
@@ -219,6 +292,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {/*navbar logo icon and link */}
       <div className="hidden lg:flex w-full py-3">
         <div className="container max-w-6xl mx-auto  text-[#000000] py-5 flex items-center justify-between gap-2">
           <div>
@@ -266,7 +340,15 @@ const Header = () => {
 
           <div className="space-x-6 flex items-center">
             <SearchIcon fontSize="medium" />
-            <PersonOutlinedIcon fontSize="medium" />
+            <div
+              onClick={() => {
+                setView("login");
+                setOpen(true);
+              }}
+              className="cursor-pointer"
+            >
+              <PersonOutlinedIcon fontSize="medium" />
+            </div>
             <FavoriteBorderOutlinedIcon fontSize="medium" />
             <div className="flex items-center">
               <ShoppingBagOutlinedIcon fontSize="medium" />

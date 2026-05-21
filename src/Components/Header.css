@@ -30,6 +30,7 @@
 .announcement-wrapper {
   flex-shrink: 0;
 }
+
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
