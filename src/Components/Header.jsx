@@ -217,6 +217,7 @@ const Header = () => {
                 </div>
               </div>
             </Dialog>
+            
             {/*forgot box dailogbox*/}
             <Dialog
               open={open && view === "forgot"}

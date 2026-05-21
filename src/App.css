@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif !important ;
 }
 
 .announcement-slide {
