@@ -217,7 +217,7 @@ const Header = () => {
                 </div>
               </div>
             </Dialog>
-            
+
             {/*forgot box dailogbox*/}
             <Dialog
               open={open && view === "forgot"}
@@ -279,15 +279,24 @@ const Header = () => {
             <div className="flex items-center  gap-5 shrink-0 ml-2">
               {/* facebook Icon */}
               <a href="#" className="" aria-label="Facebook">
-                <FacebookIcon fontSize="small" />
+                <FacebookIcon
+                  fontSize="small"
+                  className="hover:text-[#ae3f4f]"
+                />
               </a>
               {/* twitter Icon */}
               <a href="#" className="" aria-label="Twitter">
-                <TwitterIcon fontSize="small" />
+                <TwitterIcon
+                  fontSize="small"
+                  className="hover:text-[#ae3f4f]"
+                />
               </a>
               {/* instagram Icon */}
               <a href="#" className="" aria-label="Instagram">
-                <InstagramIcon fontSize="small" />
+                <InstagramIcon
+                  fontSize="small"
+                  className="hover:text-[#ae3f4f]"
+                />
               </a>
             </div>
           </div>
@@ -340,7 +349,7 @@ const Header = () => {
           </div>
 
           <div className="space-x-6 flex items-center">
-            <SearchIcon fontSize="medium" />
+            <SearchIcon fontSize="medium" className=" hover:text-[#ae3f4f]" />
             <div
               onClick={() => {
                 setView("login");
@@ -348,11 +357,27 @@ const Header = () => {
               }}
               className="cursor-pointer"
             >
-              <PersonOutlinedIcon fontSize="medium" />
+              <PersonOutlinedIcon
+                fontSize="medium"
+                className="hover:text-[#ae3f4f]"
+              />
             </div>
-            <FavoriteBorderOutlinedIcon fontSize="medium" />
+            <div className="relative">
+              <FavoriteBorderOutlinedIcon
+                fontSize="medium"
+                className=" hover:text-[#ae3f4f]"
+              />
+              <span className="text-xs text-white  absolute top-2 left-3.5 border border-[#ae3f4f] bg-[#ae3f4f] rounded-full h-4 w-4 flex items-center justify-center">
+                {" "}
+                0
+              </span>
+            </div>
+
             <div className="flex items-center">
-              <ShoppingBagOutlinedIcon fontSize="medium" />
+              <ShoppingBagOutlinedIcon
+                fontSize="medium"
+                className="hover:text-[#ae3f4f]"
+              />
               <span>(0)</span>
             </div>
           </div>
