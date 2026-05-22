@@ -3,18 +3,18 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
       <Header />
 
-      {/* <main>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
-      </main> */}
+      </main>
 
       <Footer />
     </>
