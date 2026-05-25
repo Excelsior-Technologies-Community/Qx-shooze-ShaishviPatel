@@ -1,143 +1,249 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
-import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import ProductFlip from "../Components/ProductFlip";
+
+const slideData = [
+  {
+    id: 1,
+    image:
+      "https://qx-shooz.myshopify.com/cdn/shop/files/banner-1.png?v=1731045553",
+    subtitle: "STEP INTO STYLE",
+    title: (
+      <>
+        Discover The Latest <br className="hidden md:block" /> Trends In
+        Footwear
+      </>
+    ),
+    desc: (
+      <>
+        From classic sneakers to trendy boots, our{" "}
+        <br className="hidden md:block" /> collection has something for
+        everyone.
+      </>
+    ),
+    align: "lg:justify-end",
+  },
+  {
+    id: 2,
+    image:
+      "https://qx-shooz.myshopify.com/cdn/shop/files/banner-2.png?v=1731045552",
+    subtitle: "ELEVATE YOUR LOOK",
+    title: (
+      <>
+        Find The Perfect Pair <br className="hidden md:block" /> Of Shoes To
+        Complete.
+      </>
+    ),
+    desc: (
+      <>
+        Explore our wide range of styles, colors, and{" "}
+        <br className="hidden md:block" /> materials to find the perfect shoes
+        for any occasion.
+      </>
+    ),
+    align: "lg:justify-end",
+  },
+  {
+    id: 3,
+    image:
+      "https://qx-shooz.myshopify.com/cdn/shop/files/banner-3.png?v=1731045552",
+    subtitle: "COMFORT MEETS FASHION",
+    title: (
+      <>
+        Discover Shoes That Look <br className="hidden md:block" /> Great And
+        Feel Even Better.
+      </>
+    ),
+    desc: (
+      <>
+        Our collection features comfortable and stylish footwear{" "}
+        <br className="hidden md:block" /> designed to keep your feet happy all
+        day long.
+      </>
+    ),
+    align: "md:justify-start",
+  },
+];
 
 const Home = () => {
-  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const heroslide = [
-    {
-      id: 1,
-      image: "https://qx-shooz.myshopify.com/cdn/shop/files/banner-1.png?v=1731045553",
-      title: "Discover The Latest Trends In Footwear",
-      subtitle: "Step Into Style",
-      description: "From classic sneakers to trendy boots, our collection has something for everyone.",
-      btnText: "Shop Now",
-      link: "/collections",
-    },
-    {
-      id: 2,
-      image: "https://qx-shooz.myshopify.com/cdn/shop/files/banner-2.png?v=1731045554",
-      title: "Fresh Picks For Every Season",
-      subtitle: "New Arrivals",
-      description: "Bold silhouettes, soft comfort, and a clean finish built to stand out on every step.",
-      btnText: "Explore Now",
-      link: "/collections",
-    },
-    {
-      id: 3,
-      image: "https://qx-shooz.myshopify.com/cdn/shop/files/banner-3.png?v=1731045555",
-      title: "Walk The City In Style",
-      subtitle: "Bold Comfort",
-      description: "Every pair is designed to bring all-day comfort with a fashion-first edge.",
-      btnText: "View Collection",
-      link: "/collections",
-    },
-  ];
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      offset: 0,
+    });
+  }, []);
 
-  const goToSlide = (direction) => {
-    if (!swiperInstance) return;
-    if (direction === "prev") {
-      swiperInstance.slidePrev();
-    } else {
-      swiperInstance.slideNext();
-    }
+  const handleSlideChange = (swiper) => {
+    setActiveIndex(swiper.realIndex);
+    setTimeout(() => {
+      AOS.refresh();
+    }, 50);
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f4efe9]">
-      <div className="relative">
+    <>
+      {/*hero slider */}
+      <section className="relative w-full  overflow-hidden ">
         <Swiper
-          modules={[Navigation, Autoplay, EffectFade]}
-          effect="fade"
-          loop={true}
-          speed={1000}
-        //   autoplay={{ delay: 4500, disableOnInteraction: false }}
+          modules={[Pagination, Autoplay, EffectFade]}
+          effect={"fade"}
+          fadeEffect={{ crossFade: true }}
           spaceBetween={0}
           slidesPerView={1}
-          onSwiper={setSwiperInstance}
-          className="group h-100 w-full"
+          loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          onSlideChange={handleSlideChange}
+          className="h-125 w-full"
         >
-          {heroslide.map((slide) => (
-            <SwiperSlide key={slide.id} className="relative w-full overflow-hidden">
-              
-              {/* Swiper provide karta hai render function jisme 'isActive' milta hai */}
-              {({ isActive }) => (
-                <>
-                  {/* Image Zoom Animation */}
-                  <div className="absolute inset-0">
-                    <img
-                      src={slide.image}
-                      alt={`Slide ${slide.id}`}
-                      className={`h-full w-full object-cover transition-transform duration-1400 ease-out ${
-                        isActive ? "scale-105" : "scale-100"
-                      }`}
-                    />
-                  </div>
-                  
-                  {/* Overlays */}
-                  <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/30 to-transparent" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_32%)]" />
+          {slideData.map((slide) => (
+            <SwiperSlide
+              key={slide.id}
+              className="relative w-full h-125 overflow-hidden"
+            >
+              <img
+                src={slide.image}
+                alt={slide.subtitle}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
-                  {/* Text Contents */}
-                  <div className="absolute  right-0 inset-0 flex items-center px-6 sm:px-10 lg:px-16 xl:px-24">
-                    <div
-                      className={` ml-auto max-w-3xl text-left text-white transition-all duration-700 ease-out ${
-                        isActive ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-                      }`}
+              <div
+                className="absolute inset-0 bg-black/30 z-10"
+                aria-hidden="true"
+              />
+
+              <div
+                className={`relative h-full max-w-7xl mx-auto px-6 md:px-18 flex items-center justify-center ${slide.align}`}
+              >
+                <div
+                  key={`${slide.id}-${activeIndex === slideData.indexOf(slide)}`}
+                  className="content flex flex-col items-start md:text-left text-white max-w-2xl z-20"
+                >
+                  <span
+                    data-aos="fade-up"
+                    className="text-[12px] md:text-[14px] font-medium tracking-[2px] mb-4 block"
+                  >
+                    {slide.subtitle}
+                  </span>
+
+                  <h2
+                    data-aos="fade-up"
+                    data-aos-delay="150"
+                    className="text-[30px] md:text-[40px] font-semibold mb-8 md:whitespace-nowrap"
+                  >
+                    {slide.title}
+                  </h2>
+
+                  <p
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    className="text-[14px] md:text-[16px] font-medium"
+                  >
+                    {slide.desc}
+                  </p>
+
+                  <div data-aos="fade-up" data-aos-delay="450">
+                    <a
+                      href="#"
+                      className="bg-[#b93d46] hover:bg-black text-white px-8 py-3 rounded-sm flex items-center gap-2 font-medium transition-all mt-10 "
                     >
-                      {/* Subtitle */}
-                      <span
-                        className={`mb-4 block text-[11px] font-semibold uppercase tracking-[0.35em] transition-all duration-700 delay-100 ${
-                          isActive ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                        }`}
-                      >
-                        {slide.subtitle}
-                      </span>
-                      
-                      {/* Title */}
-                      <h1
-                        className={` text-[16px] font-semibold leading-tight text-white sm:text-5xl  transition-all duration-700 delay-200 ${
-                          isActive ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                        }`}
-                      >
-                        {slide.title}
-                      </h1>
-                      
-                      {/* Description */}
-                      <p
-                        className={`mt-6 max-w-lg text-base leading-8 text-white/85 sm:text-lg transition-all duration-700 delay-300 ${
-                          isActive ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                        }`}
-                      >
-                        {slide.description}
-                      </p>
-                      
-                      {/* Button */}
-                      <a
-                        href={slide.link}
-                        className={`mt-8 inline-flex items-center gap-3 bg-[#b94f5e] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-all duration-700 delay-500 hover:bg-[#a54452] ${
-                          isActive ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                        }`}
-                      >
-                        {slide.btnText}
-                        <span aria-hidden="true">→</span>
-                      </a>
-                    </div>
+                      SHOP NOW
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </a>
                   </div>
-                </>
-              )}
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
+      </section>
+      {/*3 static card section*/}
+      <section className="py-16  w-full">
+        <div className="max-w-6xl w-full px-4  md:mx-auto md:px-10 grid grid-cols-1 md:grid-cols-3 lg:gap-10 md:gap-0 sm:gap-6 justify-items-center">
+          <div className="lg:w-87.5 lg:h-75 relative group md:w-54 md:h-80">
+            <img
+              src="//qx-shooz.myshopify.com/cdn/shop/files/grid-three-1.png?v=1731045511&width=1920"
+              alt=""
+              className="w-full h-full object-left object-cover scale-100 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
+              <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
+                Trending
+              </div>
+              <h4 className="text-[30px] font-bold text-[#000000] leading-[1.3]">
+                Men
+                <br /> Collections
+              </h4>
+              <a
+                href="/collections"
+                className="text-[#ae3f4f] hover:text-black font-medium transition-all underline underline-offset-4 mb-3 uppercase"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
 
-        
-      </div>
-    </section>
+          <div className="lg:w-87.5 lg:h-75 relative group md:w-54 md:h-80">
+            <img
+              src="//qx-shooz.myshopify.com/cdn/shop/files/grid-three-3.png?v=1731045510&width=1920"
+              alt=""
+              className="w-full h-full object-cover object-left scale-100 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
+              <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
+                Latest
+              </div>
+              <h4 className="text-[30px] font-bold text-[#000000] leading-[1.3]">
+                Women
+                <br /> Collections
+              </h4>
+              <a
+                href="/collections"
+                className="text-[#b93d46] hover:text-black font-medium transition-all underline underline-offset-4 mb-3 uppercase"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+
+          <div className="lg:w-87.5 lg:h-75 relative group md:w-54 md:h-80">
+            <img
+              src="//qx-shooz.myshopify.com/cdn/shop/files/grid-three-2.png?v=1731045516&width=1920"
+              alt=""
+              className="w-full h-full object-cover object-left scale-100 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
+              <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
+                Comfort
+              </div>
+              <h4 className="text-[30px] font-bold text-[#000000] leading-[1.3]">
+                Kid
+                <br /> Collections
+              </h4>
+              <a
+                href="/collections"
+                className="text-[#b93d46] hover:text-black font-medium transition-all underline underline-offset-4 mb-3 uppercase"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*product flip*/}
+      <ProductFlip />
+    </>
   );
 };
 
