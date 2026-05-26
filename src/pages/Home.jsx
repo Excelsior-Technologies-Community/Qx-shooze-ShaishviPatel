@@ -171,11 +171,11 @@ const Home = () => {
       {/*3 static card section*/}
       <section className="py-16  w-full">
         <div className="max-w-6xl w-full px-4  md:mx-auto md:px-10 grid grid-cols-1 md:grid-cols-3 lg:gap-10 md:gap-0 sm:gap-6 justify-items-center">
-          <div className="lg:w-87.5 lg:h-75 relative group md:w-54 md:h-80">
+          <div className="lg:w-87.5 lg:h-75 overflow-hidden relative group md:w-54 md:h-80">
             <img
               src="//qx-shooz.myshopify.com/cdn/shop/files/grid-three-1.png?v=1731045511&width=1920"
               alt=""
-              className="w-full h-full object-left object-cover scale-100 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+              className="w-full h-full object-left object-cover scale-100 transition-all duration-3000 ease-in-out group-hover:opacity-100 group-hover:scale-105"
             />
             <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
               <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
@@ -194,11 +194,11 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="lg:w-87.5 lg:h-75 relative group md:w-54 md:h-80">
+          <div className="lg:w-87.5 lg:h-75 overflow-hidden relative group md:w-54 md:h-80">
             <img
               src="//qx-shooz.myshopify.com/cdn/shop/files/grid-three-3.png?v=1731045510&width=1920"
               alt=""
-              className="w-full h-full object-cover object-left scale-100 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+              className="w-full h-full object-cover object-left scale-100 transition-all duration-3000 ease-in-out group-hover:opacity-100 group-hover:scale-105"
             />
             <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
               <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
@@ -217,11 +217,11 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="lg:w-87.5 lg:h-75 relative group md:w-54 md:h-80">
+          <div className="lg:w-87.5 lg:h-75 overflow-hidden relative group md:w-54 md:h-80">
             <img
               src="//qx-shooz.myshopify.com/cdn/shop/files/grid-three-2.png?v=1731045516&width=1920"
               alt=""
-              className="w-full h-full object-cover object-left scale-100 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+              className="w-full h-full object-cover object-left scale-100 transition-all duration-3000 ease-in-out group-hover:opacity-100 group-hover:scale-105"
             />
             <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
               <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">

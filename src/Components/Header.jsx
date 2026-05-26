@@ -138,23 +138,19 @@ const Header = () => {
 
             {/*Dialogbox*/}
             <Dialog
+              data-aos="fade-down"
+              data-aos-easing="linear"
               open={open && view === "login"}
               onClose={() => setOpen(false)}
-              PaperProps={{
-                className: "p-0 relative rounded-none overflow-hidden",
-                style: {
-                  borderRadius: 0,
-                  border: "1px solid rgba(0, 0, 0, 0.12)",
+              sx={{
+                "& .MuiDialog-container": {
+                  alignItems: "flex-start",
+                  marginTop: "50px",
                 },
               }}
             >
               {/* Close Button 'X' in top right corner */}
-              <div
-                data-aos="fade-down"
-                data-aos-duration="1000"
-                data-aos-easing="linear"
-                className="relative overflow-hidden w-125 h-130 flex flex-col items-center justify-center text-center font-semibold"
-              >
+              <div className="relative overflow-hidden w-125 h-130 flex flex-col items-center justify-center text-center font-semibold ">
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
