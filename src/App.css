@@ -37,3 +37,54 @@ body {
 .nav-link.active::after {
     width: 100%;
 }
+
+/* --- HOME PAGE MARQUEE STYLES --- */
+.home-marquee-container {
+  width: 100%;
+  overflow: hidden;
+  /* आपका दिया हुआ नया ग्रेडिएंट बैकग्राउंड */
+  background: linear-gradient(
+    90deg, 
+    rgba(88, 119, 40, 1), 
+    rgba(185, 110, 17, 1) 38%, 
+    rgba(198, 75, 40, 1) 85%, 
+    rgba(236, 35, 48, 1) 100%
+  );
+}
+
+.home-marquee-carousel {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.home-marquee-scroll-content {
+  display: flex;
+  gap: 4rem; /* थोड़ा गैप बढ़ा दिया है ताकि होमपेज पर सुंदर दिखे */
+  padding: 0.75rem 0;
+  animation: home-scroll-left 25s linear infinite; /* स्पीड थोड़ी स्मूथ रखी है */
+  will-change: transform;
+}
+
+.home-marquee-wrapper {
+  flex-shrink: 0;
+}
+
+@keyframes home-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-marquee-scroll-content {
+    animation: home-scroll-left 18s linear infinite;
+    gap: 2rem;
+    padding: 0.5rem 0;
+  }
+}

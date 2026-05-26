@@ -89,6 +89,23 @@ const Home = () => {
     }, 50);
   };
 
+  const marqueeItems = (
+    <>
+      <div className="home-marquee-wrapper text-white font-bold whitespace-nowrap uppercase tracking-wider text-sm md:text-base flex items-center gap-3">
+        <span>⚡ NEW ARRIVALS DROP</span>
+      </div>
+      <div className="home-marquee-wrapper text-white font-bold whitespace-nowrap uppercase tracking-wider text-sm md:text-base flex items-center gap-3">
+        <span>📦 FREE SHIPPING ON ALL ORDERS</span>
+      </div>
+      <div className="home-marquee-wrapper text-white font-bold whitespace-nowrap uppercase tracking-wider text-sm md:text-base flex items-center gap-3">
+        <span>🔥 COMFORT MEETS STYLE</span>
+      </div>
+      <div className="home-marquee-wrapper text-white font-bold whitespace-nowrap uppercase tracking-wider text-sm md:text-base flex items-center gap-3">
+        <span>👟 PREMIUM QUALITY SNEAKERS</span>
+      </div>
+    </>
+  );
+
   return (
     <>
       {/*hero slider */}
@@ -243,6 +260,48 @@ const Home = () => {
       </section>
       {/*product flip*/}
       <ProductFlip />
+      {/*infinity scrollbar*/}
+      <section>
+        <div className="w-full h-screen relative mb-10">
+          <div className=" w-full h-full bg-[url('https://qx-shooz.myshopify.com/cdn/shop/files/wide-banner.png?v=1731045552')] bg-cover bg-center bg-no-repeat">
+            <div className="relative left-115 top-40 max-w-xl md:max-w-3xl flex flex-col items-end text-right gap-4 md:gap-5">
+              <div className="text-[14px] font-medium text-[#000000] uppercase ">
+                Comfort meet fashion{" "}
+              </div>
+              <div className="font-bold text-[#000000] leading-normal">
+                <h4 className="text-[45px]">
+                  {" "}
+                  Discover Shoes That Look Great <br />
+                  And Feel Even Better.{" "}
+                </h4>
+              </div>
+              <div className="text-[16px] text-[#000000] leading-no">
+                Our collection features comfortable and stylish footwear
+                designed to keep your feet happy all day long.
+              </div>
+              <a
+                href="#"
+                className="bg-[#b93d46] hover:bg-black text-white px-4 py-3 rounded-sm flex items-center gap-2 font-medium transition-all mt-10 max-w-40"
+              >
+                SHOP NOW
+                <i className="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            data-aos="fade"
+            data-aos-duration="1000"
+            className="home-marquee-container"
+          >
+            <div className="home-marquee-carousel">
+              <div className="home-marquee-scroll-content">
+                {marqueeItems}
+                {marqueeItems}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
