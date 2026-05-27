@@ -42,7 +42,6 @@ body {
 .home-marquee-container {
   width: 100%;
   overflow: hidden;
-  /* आपका दिया हुआ नया ग्रेडिएंट बैकग्राउंड */
   background: linear-gradient(
     90deg, 
     rgba(88, 119, 40, 1), 
@@ -62,9 +61,9 @@ body {
 
 .home-marquee-scroll-content {
   display: flex;
-  gap: 4rem; /* थोड़ा गैप बढ़ा दिया है ताकि होमपेज पर सुंदर दिखे */
+  gap: 4rem; 
   padding: 0.75rem 0;
-  animation: home-scroll-left 25s linear infinite; /* स्पीड थोड़ी स्मूथ रखी है */
+  animation: home-scroll-left 25s linear infinite; 
   will-change: transform;
 }
 

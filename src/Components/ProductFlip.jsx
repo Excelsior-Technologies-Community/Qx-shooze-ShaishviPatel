@@ -39,7 +39,7 @@ export default function ProductFlip() {
           data-aos="fade-up"
           data-aos-delay="180"
           data-aos-duration="700"
-          className="flex gap-8 md:gap-12 relative pb-2 justify-center border-b border-gray-200 w-full max-w-md "
+          className="flex gap-4 sm:gap-8 md:gap-12 relative pb-2 justify-center border-b border-gray-200 w-full max-w-md px-4 mx-auto "
         >
           {["FEATURED", "NEW ARRIVALS", "BEST SELLER"].map((tab) => (
             <button
@@ -64,7 +64,7 @@ export default function ProductFlip() {
       <div className="container max-w-6xl px-4 lg:px-0 py-10 mx-auto">
         <div
           key={activeTab}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 "
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 "
         >
           {visibleProducts.map((product, index) => (
             <div
