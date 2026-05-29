@@ -19,7 +19,7 @@ const Footer = () => {
   const id = React.useId();
   return (
     <>
-      <section className="bg-[#eaeae2]  py-4 w-full">
+      <section className="bg-[#eaeae2]  py-4 w-full overflow-hidden">
         <div className=" hidden lg:block max-w-8xl mx-auto px-5 py-3 text-center">
           <div className="grid grid-cols-5 items-center justify-center gap-10">
             <div className="flex flex-col items-center">
@@ -479,7 +479,7 @@ const Footer = () => {
         </section>
 
         <hr className="border border-gray-300 my-5" />
-        
+
         <div
           className="max-w-7xl mx-auto mt-10 lg:px-5 py-3 grid 
           md:grid-cols-1 lg:grid-cols-2 md:px-20 sm:text-center"
@@ -488,9 +488,9 @@ const Footer = () => {
             Copyright © 2024 <span className="text-[#ae3f4f]">Shooz</span>. All
             rights reserved
           </div>
-          <div className="flex justify-center lg:justify-end items-center gap-4 mt-5 lg:mt-0 px-4 sm:px-15">
+          <div className="flex flex-wrap justify-center lg:justify-end items-center gap-3 mt-5 lg:mt-0 px-3 w-full overflow-hidden ">
             <svg
-              class="payment-icon"
+              className="payment-icon shrink-0"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
               aria-labelledby="pi-american_express"
@@ -534,7 +534,7 @@ const Footer = () => {
               ></path>
             </svg>
             <svg
-              class="payment-icon"
+              className="payment-icon shrink-0"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -583,7 +583,7 @@ const Footer = () => {
               </g>
             </svg>
             <svg
-              class="payment-icon"
+              className="payment-icon shrink-0"
               viewBox="0 0 38 24"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -606,7 +606,7 @@ const Footer = () => {
               ></path>
             </svg>
             <svg
-              class="payment-icon"
+              className="payment-icon shrink-0"
               width="38"
               height="24"
               role="img"
@@ -647,7 +647,7 @@ const Footer = () => {
               </g>
             </svg>
             <svg
-              class="payment-icon"
+              className="payment-icon shrink-0"
               viewBox="0 0 38 24"
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -670,7 +670,7 @@ const Footer = () => {
               ></path>
             </svg>
             <svg
-              class="payment-icon"
+              className="payment-icon shrink-0"
               viewBox="0 0 38 24"
               width="38"
               height="24"
@@ -746,7 +746,7 @@ const Footer = () => {
               </defs>
             </svg>
             <svg
-              class="payment-icon"
+              className="payment-icon shrink-0"
               viewBox="0 0 38 24"
               xmlns="http://www.w3.org/2000/svg"
               role="img"

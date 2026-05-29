@@ -220,7 +220,7 @@ const Home = () => {
               alt=""
               className="w-full h-full object-left object-cover scale-100 transition-all duration-3000 ease-in-out group-hover:opacity-100 group-hover:scale-105"
             />
-            <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
+            <div className="absolute inset-0 top-20 flex flex-col items-start gap-5 px-8 md:items-start">
               <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
                 Trending
               </div>
@@ -243,7 +243,7 @@ const Home = () => {
               alt=""
               className="w-full h-full object-cover object-left scale-100 transition-all duration-3000 ease-in-out group-hover:opacity-100 group-hover:scale-105"
             />
-            <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
+            <div className="absolute inset-0 top-20 flex flex-col items-start gap-5 px-8 md:items-start">
               <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
                 Latest
               </div>
@@ -266,7 +266,7 @@ const Home = () => {
               alt=""
               className="w-full h-full object-cover object-left scale-100 transition-all duration-3000 ease-in-out group-hover:opacity-100 group-hover:scale-105"
             />
-            <div className="absolute inset-0 top-20 flex flex-col item-start gap-5 px-8 md:item-center">
+            <div className="absolute inset-0 top-20 flex flex-col items-start gap-5 px-8 md:items-start">
               <div className="text-[12px] uppercase text-[#000000] font-medium tracking-[2px] ">
                 Comfort
               </div>
@@ -409,7 +409,7 @@ const Home = () => {
                     <img
                       src={item.img}
                       alt={item.title}
-                      className="w-125 h-125 md:w-full md:h-full object-cover scale-100 transition-all ease-in-out duration-1000 group-hover:opacity-100 group-hover:scale-110 group-hover:cursor-pointer"
+                      className="w-full h-80 md:h-full object-cover scale-100 transition-all ease-in-out duration-1000 group-hover:opacity-100 group-hover:scale-110 group-hover:cursor-pointer"
                     />
                     <div className="h-[63.55px] w-60 sm:w-55 sm:h-20 md:w-50 md:h-20 bg-white absolute inset-0 top-105 lg:top-52 md:top-52 sm:top-58 left-1/2 transform -translate-x-1/2 -translate-y-1/2 duration-300 flex items-center justify-between px-4 font-medium text-black group-hover:bg-[#ae3f4f]">
                       <a href="#" className="flex-1">
@@ -430,8 +430,8 @@ const Home = () => {
       </section>
       {/*colllage section grid section */}
       <section className="w-full mb-10 bg-[#333333] h-full">
-        <div className="w-full  md:mx-auto md:px-10 py-10 border border-white">
-          <div className="max-w-4xl w-full md:mx-5 lg:mx-auto flex flex-col items-center text-center gap-6">
+        <div className="w-full md:mx-auto md:px-10 py-10 ">
+          <div className="max-w-4xl w-full md:mx-5 lg:mx-auto flex flex-col items-center text-center gap-6 ">
             <div className=" uppercase text-[#ffffff] tracking-[2px] font-medium">
               Fashion Sneakers
             </div>
@@ -443,41 +443,90 @@ const Home = () => {
             </div>
           </div>
 
-          <div className=" max-w-6xl w-full py-8 px-8 md:px-0 md:mx-auto gap-6 grid grid-cols-1 md:grid-cols-3 lg:gap-5 md:gap-0  justify-items-center">
-            <div className="lg:w-87.25 lg:h-92.5  overflow-hidden relative group md:w-54 md:h-93.25 ">
+          <div className="max-w-6xl w-full py-8 px-4 md:px-0 md:mx-auto gap-6 grid grid-cols-1 md:grid-cols-3 lg:gap-5 md:gap-0 justify-items-center">
+            <div className="w-full max-w-[340px] h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
               <img
                 src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-1.png?v=1731045532&width=1920"
                 alt=""
-                className="w-full h-full object-left object-cover scale-100 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+                className="w-full h-full object-left object-cover scale-100 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105 rounded-md"
               />
-              <div className="absolute inset-0  flex flex-col sm:px-15 justify-end py-15 item-start gap-5 md:px-8 md:item-center">
-                <div className="text-[12px] uppercase text-[#ffffff] font-medium tracking-[2px] ">
+              <div className="absolute inset-0 px-8 flex flex-col sm:px-15 justify-end py-15 items-start gap-5 md:px-8 md:items-start">
+                <div className="text-[12px] uppercase text-[#ffffff] font-medium tracking-[2px]">
                   Comfort meets Fashion
                 </div>
-                <h4 className=" sm:text-[18px] md:text-[30px] font-bold text-[#ffffff] leading-[1.3]">
-                  Discover shoes <br />that look great
+                <h4 className="text-[24px] sm:text-[18px] md:text-[30px] font-bold text-[#ffffff] leading-[1.3]">
+                  Discover shoes <br />
+                  that look great
                 </h4>
                 <a
                   href="/collections"
-                  className="text-[#ffffff]  font-medium transition-all underline underline-offset-4 mb-3 uppercase"
+                  className="text-[#ffffff] font-medium transition-all underline underline-offset-4 mb-3 uppercase"
                 >
                   Shop Now
                 </a>
               </div>
             </div>
 
-            <div className="lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25 ">
+            <div className="w-full max-w-[340px] h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
               <img
                 src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-2.png?v=1731045532&width=1920"
                 alt=""
-                className="w-full h-full object-cover object-left scale-100 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+                className="w-full h-full object-cover object-left scale-100 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105 rounded-md"
               />
-               <div className="absolute inset-0  flex flex-col justify-end py-15 item-start gap-5 md:px-8 md:item-center sm:px-15">
-                <div className="text-[12px] uppercase text-[#ffffff] font-medium tracking-[2px] ">
-                 Elevate Your Look
+              <div className="absolute inset-0 px-8 flex flex-col justify-end py-15 items-start gap-5 md:px-8 md:items-start sm:px-15">
+                <div className="text-[12px] uppercase text-[#ffffff] font-medium tracking-[2px]">
+                  Elevate Your Look
                 </div>
-                <h4 className="text-[30px] font-bold text-[#ffffff] leading-[1.3]">
-                 Find the perfect <br />pair of shoes
+                <h4 className="text-[24px] sm:text-[18px] md:text-[30px] font-bold text-[#ffffff] leading-[1.3]">
+                  Find the perfect <br />
+                  pair of shoes
+                </h4>
+                <a
+                  href="/collections"
+                  className="text-[#ffffff] font-medium transition-all underline underline-offset-4 mb-3 uppercase"
+                >
+                  Shop Now
+                </a>
+              </div>
+            </div>
+
+            <div className="w-full max-w-[340px] h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
+              <img
+                src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-3.png?v=1731045526&width=1920"
+                alt=""
+                className="w-full h-full object-cover object-left scale-100 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105 rounded-md"
+              />
+              <div className="absolute inset-0 px-8 flex flex-col justify-end py-15 items-start gap-5 md:px-8 md:items-start sm:px-15">
+                <div className="text-[12px] uppercase text-[#ffffff] font-medium tracking-[2px]">
+                  Step into Style
+                </div>
+                <h4 className="text-[24px] sm:text-[18px] md:text-[30px] font-bold text-[#ffffff] leading-[1.3]">
+                  The latest trends <br />
+                  in footwear
+                </h4>
+                <a
+                  href="/collections"
+                  className="text-[#ffffff] font-medium transition-all underline underline-offset-4 mb-3 uppercase"
+                >
+                  Shop Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-6xl w-full py-8 px-4 md:px-6 lg:px-8 mx-auto gap-6 grid grid-cols-1 md:grid-cols-2 justify-items-center">
+            <div className="w-full h-75 md:h-100 lg:h-full overflow-hidden relative group rounded-md">
+              <img
+                src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-4.png?v=1731045517&width=1920"
+                alt=""
+                className="w-full h-full md:object-left object-cover scale-100 transition-all duration-400 ease-in-out group-hover:opacity-100 group-hover:scale-105 rounded-md"
+              />
+              <div className="absolute inset-0  flex flex-col items-start justify-end py-5 gap-5 px-8 md:items-start">
+                <div className="text-[12px] uppercase text-[#ffffff] font-medium tracking-[2px] ">
+                  shop by brand
+                </div>
+                <h4 className="text-[30px] font-bold text-[#ffffff] leading-normal">
+                  Find your favourite <br /> brands and styles
                 </h4>
                 <a
                   href="/collections"
@@ -488,23 +537,22 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
+            <div className="w-full h-75 md:h-100 lg:h-full overflow-hidden relative group rounded-md">
               <img
-                src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-3.png?v=1731045526&width=1920"
+                src="//qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-5.png?v=1731045518&width=1920"
                 alt=""
-                className="w-full h-full object-cover object-left scale-100 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+                className="w-full h-full object-cover object-left scale-100 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105 rounded-md"
               />
-                <div className="absolute inset-0  flex flex-col justify-end py-15 item-start gap-5 md:px-8 md:item-center sm:px-15">
+              <div className="absolute  inset-0 flex flex-col items-start justify-end py-5 gap-5 px-8 md:items-start">
                 <div className="text-[12px] uppercase text-[#ffffff] font-medium tracking-[2px] ">
-              Step into Style
+                  sale and clearance
                 </div>
-                <h4 className="text-[30px] font-bold text-[#ffffff] leading-[1.3]">
-               The latest trends <br />in footwear
-
+                <h4 className="text-[30px] font-bold text-[#ffffff] leading-normal">
+                  Shop our latest deals <br /> and discounts
                 </h4>
                 <a
                   href="/collections"
-                  className="text-[#ffffff]  font-medium transition-all underline underline-offset-4 mb-3 uppercase"
+                  className="text-[#ffffff] font-medium transition-all underline underline-offset-4 mb-3 uppercase"
                 >
                   Shop Now
                 </a>
