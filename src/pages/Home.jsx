@@ -444,7 +444,7 @@ const Home = () => {
           </div>
 
           <div className="max-w-6xl w-full py-8 px-4 md:px-0 md:mx-auto gap-6 grid grid-cols-1 md:grid-cols-3 lg:gap-5 md:gap-0 justify-items-center">
-            <div className="w-full max-w-[340px] h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
+            <div className="w-full max-w-85 h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
               <img
                 src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-1.png?v=1731045532&width=1920"
                 alt=""
@@ -467,7 +467,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="w-full max-w-[340px] h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
+            <div className="w-full max-w-85 h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
               <img
                 src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-2.png?v=1731045532&width=1920"
                 alt=""
@@ -490,7 +490,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="w-full max-w-[340px] h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
+            <div className="w-full max-w-85 h-92.5 lg:w-87.25 lg:h-92.5 overflow-hidden relative group md:w-54 md:h-93.25">
               <img
                 src="https://qx-shooz.myshopify.com/cdn/shop/files/five-col-banner-3.png?v=1731045526&width=1920"
                 alt=""
