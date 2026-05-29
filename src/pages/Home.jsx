@@ -561,6 +561,164 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/*huge discount banner */}
+      <section className="my-5 w-full bg-transparent">
+        <div className=" w-full md:mx-5 lg:mx-auto flex flex-col items-center text-center gap-5 ">
+          <div className=" uppercase text-[#000000] tracking-[2px] font-medium">
+            Season's End Sale
+          </div>
+          <h1 className="lg:max-w-full md:max-w-2xl text-[#000000] text-[40px] lg:text-[50px] font-bold leading-normal">
+            Huge discounts on last season's styles
+          </h1>
+          <div className="text-[#333333b3] text-[16px] leading-normal font-medium">
+            Himenaeos nascetur tristique consequat mus ad. <br /> Accumsan
+            fringilla in laoreet id bibendum et.
+          </div>
+        </div>
+        <div className="max-w-6xl w-full py-8 px-4 md:px-6 mx-auto gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-5">
+            <div className="">
+              <div className="flex items-start gap-4 p-2">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-4_a9f5532a-47cd-4f32-8958-57ee765f0a27.jpg?v=1731311278&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start ">
+                  <p className="text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
+                    Classic White Tennis Sneakers
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-200">
+              <div className="flex items-start gap-4 p-2 my-2">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-17.jpg?v=1731315215&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start py-2">
+                  <p className="text-[20px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                    Waterproof Hiking Boots
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-200">
+              <div className="flex items-start gap-4 p-2 my-2 ">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-3_be4a38ab-621f-46d5-a126-3488687e10f6.jpg?v=1731311211&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start  py-2">
+                  <p className="text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                    Classic Leather Sneakers
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$21.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-5">
+            <div className="">
+              <div className="flex items-start gap-4 p-2">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-4_a9f5532a-47cd-4f32-8958-57ee765f0a27.jpg?v=1731311278&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start ">
+                  <p className="text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
+                    Classic White Tennis Sneakers
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-200">
+              <div className="flex items-start gap-4 p-2 my-2">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-17.jpg?v=1731315215&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start py-2">
+                  <p className="text-[20px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                    Waterproof Hiking Boots
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-200">
+              <div className="flex items-start gap-4 p-2 my-2 ">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-3_be4a38ab-621f-46d5-a126-3488687e10f6.jpg?v=1731311211&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start  py-2">
+                  <p className="text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                    Classic Leather Sneakers
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$21.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-5">
+            <div className="">
+              <div className="flex items-start gap-4 p-2">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-4_a9f5532a-47cd-4f32-8958-57ee765f0a27.jpg?v=1731311278&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start ">
+                  <p className="text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
+                    Classic White Tennis Sneakers
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-200">
+              <div className="flex items-start gap-4 p-2 my-2">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-17.jpg?v=1731315215&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start py-2">
+                  <p className="text-[20px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                    Waterproof Hiking Boots
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-gray-200">
+              <div className="flex items-start gap-4 p-2 my-2 ">
+                <img
+                  src="https://qx-shooz.myshopify.com/cdn/shop/files/product-3_be4a38ab-621f-46d5-a126-3488687e10f6.jpg?v=1731311211&width=150"
+                  alt=""
+                  className="h-20"
+                />
+                <div className="flex flex-col items-start  py-2">
+                  <p className="text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                    Classic Leather Sneakers
+                  </p>
+                  <div className="text-[16px] text-[#333333] pt-1">$21.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
