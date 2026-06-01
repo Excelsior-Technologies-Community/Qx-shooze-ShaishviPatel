@@ -722,7 +722,7 @@ const Home = () => {
       </section>
       {/* our most popular design*/}
       <section className="w-full mb-10 bg-transparent">
-        <div className="max-w-6xl mx-10  md:mx-7 lg:mx-auto mb-10 overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center lg:justify-items-start">
+        <div className="max-w-6xl mx-10  md:mx-7 px-5 lg:mx-auto mb-10 overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center lg:justify-items-start">
           <div className="w-full flex flex-col lg:items-start gap-5 px-8 md:px-10 lg:px-0 py-10 items-center text-center lg:text-left">
             <div className="text-[16px] font-semibold uppercase tracking-[3px]">
               Our most popular styles
@@ -803,7 +803,21 @@ const Home = () => {
         </div>
       </section>
       {/* discover our store  section */}
-      
+      <section className="w-full bg-[linear-gradient(90deg,rgba(149,109,194,1),rgba(78,73,145,1)_20%,rgba(185,61,70,1)_100%)]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 px-8 py-14">
+          <div className="text-center md:text-left">
+            <h3 className="text-xl md:text-2xl font-semibold text-white tracking-wide">
+              Discover Our Stores: Your Local Shoe Haven
+            </h3>
+          </div>
+
+          <div className="shrink-0">
+            <button className="bg-[#4e4991] hover:bg-black text-white px-8 py-4 rounded-xs font-semibold tracking-wider text-xs uppercase transition-all duration-300 shadow-md">
+              Find store
+            </button>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
