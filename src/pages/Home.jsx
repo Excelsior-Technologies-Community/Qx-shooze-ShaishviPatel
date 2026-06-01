@@ -7,6 +7,7 @@ import "swiper/css/effect-fade";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ProductFlip from "../Components/ProductFlip";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const slideData = [
   {
@@ -563,7 +564,7 @@ const Home = () => {
       </section>
       {/*huge discount banner */}
       <section className="my-5 w-full bg-transparent">
-        <div className=" w-full md:mx-5 lg:mx-auto flex flex-col items-center text-center gap-5 ">
+        <div className=" w-full md:mx-auto lg:mx-auto flex flex-col items-center text-center gap-5 ">
           <div className=" uppercase text-[#000000] tracking-[2px] font-medium">
             Season's End Sale
           </div>
@@ -585,7 +586,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start ">
-                  <p className="text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
                     Classic White Tennis Sneakers
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
@@ -600,7 +601,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start py-2">
-                  <p className="text-[20px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
                     Waterproof Hiking Boots
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
@@ -615,7 +616,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start  py-2">
-                  <p className="text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
                     Classic Leather Sneakers
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$21.00</div>
@@ -632,7 +633,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start ">
-                  <p className="text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
                     Classic White Tennis Sneakers
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
@@ -647,7 +648,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start py-2">
-                  <p className="text-[20px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
                     Waterproof Hiking Boots
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
@@ -662,7 +663,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start  py-2">
-                  <p className="text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
                     Classic Leather Sneakers
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$21.00</div>
@@ -679,7 +680,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start ">
-                  <p className="text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
                     Classic White Tennis Sneakers
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
@@ -694,7 +695,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start py-2">
-                  <p className="text-[20px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[20px] text-[#000000] font-medium uppercase leading-relaxed">
                     Waterproof Hiking Boots
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$25.00</div>
@@ -709,7 +710,7 @@ const Home = () => {
                   className="h-20"
                 />
                 <div className="flex flex-col items-start  py-2">
-                  <p className="text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
+                  <p className=" text-[15px] md:text-[18px] whitespace-nowrap text-[#000000] font-medium uppercase leading-relaxed">
                     Classic Leather Sneakers
                   </p>
                   <div className="text-[16px] text-[#333333] pt-1">$21.00</div>
@@ -719,6 +720,90 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* our most popular design*/}
+      <section className="w-full mb-10 bg-transparent">
+        <div className="max-w-6xl mx-10  md:mx-7 lg:mx-auto mb-10 overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center lg:justify-items-start">
+          <div className="w-full flex flex-col lg:items-start gap-5 px-8 md:px-10 lg:px-0 py-10 items-center text-center lg:text-left">
+            <div className="text-[16px] font-semibold uppercase tracking-[3px]">
+              Our most popular styles
+            </div>
+            <div className="text-[30px] lg:text-[50px] font-bold text-[#000000] leading-[1.3]">
+              Save big on shoes <br /> from last season
+            </div>
+            <p className="text-[#333333] text-[16px] leading-relaxed font-medium ">
+              Morbi natoque id finibus natoque sapien turpis elementum maximus.
+              Sociosqu auctor a urna consequat laoreet nisi accumsan magna.{" "}
+              <br />
+              Adipiscing vulputate nec euismod, a aliquam enim. Mi facilisi ex{" "}
+              <br />
+              est habitant lacus sagittis vitae.
+            </p>
+            <p className="text-[#333333] text-[16px] leading-relaxed font-medium">
+              Molestie dolor mus vitae penatibus sed lectus convallis ut neque.
+              Leo elementum euismod penatibus cras sociosqu aliquet tellus.
+            </p>
+            <a
+              href="#"
+              className="bg-[#b93d46] hover:bg-black text-white px-6 py-3  flex items-center justify-center gap-2 font-medium  mt-4 w-40 transition-all duration-500 "
+            >
+              SHOP NOW <i className="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          {/* rightside video section */}
+          <div className="w-full px-8 md:px-10 lg:px-0 py-10 flex items-center justify-center relative">
+            <div className="w-full">
+              <img
+                src="//qx-shooz.myshopify.com/cdn/shop/files/video-pic.png?v=1731407733&width=1920"
+                alt="Video Banner"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-start justify-start cursor-pointer group ">
+              <div className=" w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 flex justify-center ">
+                <div>
+                  <div className=" w-25 h-25 lg:w-35 lg:h-35 border border-white rounded-full absolute  left-2 -top-15 lg:-top-25 lg:left-0 transform translate-x-1/2 translate-y-1/2"></div>
+
+                  <PlayArrowIcon
+                    sx={{
+                      fontSize: 40,
+                    }}
+                    className="absolute left-17 lg:-top-1 lg:left-25 translate-y-1/2 translate-x-1/2 text-white z-10 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+
+                <div className="relative inset-0 -left-15 top-10 animate-[spin_20s_linear_infinite] ">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 150 150"
+                    className="w-full h-full"
+                  >
+                    <defs>
+                      <path
+                        id="textPath"
+                        d="M 75,75 m -52,0 a 52,52 0 1,1 104,0 a 52,52 0 1,1 -104,0"
+                      />
+                    </defs>
+                    <text
+                      fill="white"
+                      fontSize="10.5"
+                      fontWeight="500"
+                      letterSpacing="4.5px"
+                    >
+                      <textPath startOffset="0%" xlinkHref="#textPath">
+                        FASHION2 STYLE STORE • FASHION2 STYLE STORE •
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* discover our store  section */}
+      
     </>
   );
 };
